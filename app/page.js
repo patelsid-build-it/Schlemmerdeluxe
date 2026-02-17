@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { 
   MapPin, Phone, Clock, ChefHat, Utensils, Car, ExternalLink, 
-  Instagram, Navigation, Star, ArrowRight, CalendarDays, Users
+  Instagram, Star, ArrowRight, CalendarDays
 } from 'lucide-react'
 import { restaurant, getBestsellers } from '@/data/restaurant'
 
@@ -30,7 +30,7 @@ export default function HomePage() {
   const bestsellers = getBestsellers()
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
       <main className="flex-1 pb-20 md:pb-0">
@@ -39,10 +39,10 @@ export default function HomePage() {
           <div className="container py-16 md:py-24">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                {restaurant.name} – <span className="text-white/90">frisch, lecker, schnell.</span>
+                {restaurant.name} – <span className="text-white/90">Premium Steak Döner</span>
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-8">
-                {restaurant.description}
+                Frisch zubereiteter Premium Steak Döner, Veggie & Vegan Burger – Abholung oder Lieferung in Düsseldorf.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
@@ -82,7 +82,7 @@ export default function HomePage() {
           {/* Decorative Wave */}
           <div className="absolute bottom-0 left-0 right-0">
             <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-              <path d="M0 60V30C240 10 480 0 720 0C960 0 1200 10 1440 30V60H0Z" fill="hsl(0, 0%, 98%)" />
+              <path d="M0 60V30C240 10 480 0 720 0C960 0 1200 10 1440 30V60H0Z" className="fill-background" />
             </svg>
           </div>
         </section>
@@ -95,7 +95,7 @@ export default function HomePage() {
                 const Icon = iconMap[usp.icon] || ChefHat
                 return (
                   <div key={index} className="text-center">
-                    <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-brand/10 flex items-center justify-center">
+                    <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-brand/10 dark:bg-brand/20 flex items-center justify-center">
                       <Icon className="h-7 w-7 text-brand" />
                     </div>
                     <h3 className="font-semibold text-foreground mb-1">{usp.title}</h3>
@@ -108,7 +108,7 @@ export default function HomePage() {
         </section>
 
         {/* Online Bestellen Section */}
-        <section className="py-12 bg-muted">
+        <section className="py-12 bg-muted dark:bg-card">
           <div className="container">
             <div className="text-center mb-8">
               <Badge className="mb-2 bg-brand text-white">Online Bestellen</Badge>
@@ -117,7 +117,7 @@ export default function HomePage() {
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              <Card className="hover:shadow-lg transition-shadow border-2 hover:border-brand">
+              <Card className="hover:shadow-lg transition-shadow border-2 hover:border-brand dark:bg-card">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#FF8000]/10 flex items-center justify-center">
                     <span className="text-2xl font-bold text-[#FF8000]">L</span>
@@ -133,7 +133,7 @@ export default function HomePage() {
                 </CardContent>
               </Card>
               
-              <Card className="hover:shadow-lg transition-shadow border-2 hover:border-brand">
+              <Card className="hover:shadow-lg transition-shadow border-2 hover:border-brand dark:bg-card">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#009DE0]/10 flex items-center justify-center">
                     <span className="text-2xl font-bold text-[#009DE0]">W</span>
@@ -162,7 +162,7 @@ export default function HomePage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {bestsellers.slice(0, 6).map((item) => (
-                <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow dark:bg-card">
                   <CardContent className="p-0">
                     <div className="h-32 gradient-hero flex items-center justify-center">
                       <Utensils className="h-12 w-12 text-white/50" />
@@ -191,7 +191,7 @@ export default function HomePage() {
         </section>
 
         {/* Menu Preview with Tabs */}
-        <section className="py-12 bg-muted">
+        <section className="py-12 bg-muted dark:bg-card">
           <div className="container">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold mb-2">Unser Menü</h2>
@@ -199,7 +199,7 @@ export default function HomePage() {
             </div>
             
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="flex flex-wrap justify-center gap-1 h-auto bg-white p-1 mb-6">
+              <TabsList className="flex flex-wrap justify-center gap-1 h-auto bg-background dark:bg-muted p-1 mb-6">
                 {restaurant.menuCategories.map((category) => (
                   <TabsTrigger 
                     key={category.id} 
@@ -215,7 +215,7 @@ export default function HomePage() {
                 <TabsContent key={category.id} value={category.id}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {category.items.slice(0, 4).map((item) => (
-                      <Card key={item.id} className="hover:shadow-md transition-shadow bg-white">
+                      <Card key={item.id} className="hover:shadow-md transition-shadow bg-background dark:bg-background">
                         <CardContent className="p-4 flex gap-4">
                           <div className="w-20 h-20 shrink-0 rounded-lg gradient-hero flex items-center justify-center">
                             <Utensils className="h-8 w-8 text-white/40" />
@@ -253,8 +253,46 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Öffnungszeiten */}
+        <section id="oeffnungszeiten" className="py-12 bg-background scroll-mt-20">
+          <div className="container">
+            <div className="max-w-xl mx-auto">
+              <Card className="dark:bg-card">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center">
+                      <Clock className="h-6 w-6 text-brand" />
+                    </div>
+                    <h2 className="text-2xl font-bold">Öffnungszeiten</h2>
+                  </div>
+                  
+                  <ul className="space-y-2">
+                    {restaurant.openingHours.map((item, index) => (
+                      <li key={index} className="flex justify-between py-2 border-b border-border last:border-0">
+                        <span className="font-medium">{item.day}</span>
+                        <span className="text-muted-foreground">{item.hours}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <MapPin className="h-4 w-4 text-brand" />
+                      <span>{restaurant.address.street}, {restaurant.address.zip} {restaurant.address.city}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-brand font-medium">
+                      <Car className="h-4 w-4" />
+                      <span>{restaurant.address.location} • 100 kostenlose Parkplätze</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Tischreservierung */}
-        <section id="reservierung" className="py-12 bg-background scroll-mt-20">
+        <section id="reservierung" className="py-12 bg-muted dark:bg-card scroll-mt-20">
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
@@ -268,7 +306,7 @@ export default function HomePage() {
                 </p>
               </div>
               
-              <Card>
+              <Card className="dark:bg-background">
                 <CardContent className="p-6">
                   <ReservationForm />
                 </CardContent>
@@ -278,7 +316,7 @@ export default function HomePage() {
         </section>
 
         {/* Instagram Section */}
-        <section className="py-12 bg-muted">
+        <section className="py-12 bg-background">
           <div className="container">
             <div className="text-center mb-8">
               <Instagram className="h-10 w-10 mx-auto mb-3 text-brand" />
@@ -306,75 +344,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Standort & Öffnungszeiten */}
-        <section id="standort" className="py-12 bg-background scroll-mt-20">
-          <div className="container">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Standort */}
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-brand" />
-                    </div>
-                    <h2 className="text-2xl font-bold">Standort</h2>
-                  </div>
-                  
-                  <address className="not-italic text-lg mb-4">
-                    <p className="font-semibold">{restaurant.name}</p>
-                    <p>{restaurant.address.street}</p>
-                    <p>{restaurant.address.zip} {restaurant.address.city}</p>
-                    <p className="text-brand font-medium">{restaurant.address.location}</p>
-                  </address>
-                  
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                    <Car className="h-4 w-4 text-brand" />
-                    <span>100 kostenlose Parkplätze direkt vor Ort</span>
-                  </div>
-                  
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button className="bg-brand hover:bg-brand/90" asChild>
-                      <a href={restaurant.googleMapsLink} target="_blank" rel="noopener noreferrer">
-                        <Navigation className="mr-2 h-4 w-4" />
-                        Route öffnen
-                      </a>
-                    </Button>
-                    <Button variant="outline" asChild>
-                      <a href={`tel:${restaurant.phone}`}>
-                        <Phone className="mr-2 h-4 w-4" />
-                        Anrufen
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Öffnungszeiten */}
-              <Card id="oeffnungszeiten" className="scroll-mt-20">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-brand" />
-                    </div>
-                    <h2 className="text-2xl font-bold">Öffnungszeiten</h2>
-                  </div>
-                  
-                  <ul className="space-y-2">
-                    {restaurant.openingHours.map((item, index) => (
-                      <li key={index} className="flex justify-between py-2 border-b border-border last:border-0">
-                        <span className="font-medium">{item.day}</span>
-                        <span className="text-muted-foreground">{item.hours}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* Kontakt Section */}
-        <section id="kontakt" className="py-12 bg-muted scroll-mt-20">
+        <section id="kontakt" className="py-12 bg-muted dark:bg-card scroll-mt-20">
           <div className="container">
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
@@ -382,7 +353,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground">Haben Sie Fragen? Wir helfen Ihnen gerne!</p>
               </div>
               
-              <Card>
+              <Card className="dark:bg-background">
                 <CardContent className="p-6">
                   {/* Telefon prominent */}
                   <div className="text-center mb-6 pb-6 border-b border-border">
