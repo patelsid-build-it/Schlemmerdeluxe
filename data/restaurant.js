@@ -56,7 +56,7 @@ export const restaurant = {
     { icon: "ChefHat", title: "Frisch zubereitet", description: "Alle Gerichte werden frisch für Sie zubereitet" },
     { icon: "Clock", title: "Schnelle Abholung", description: "Kurze Wartezeiten bei Abholung" },
     { icon: "Utensils", title: "Große Auswahl", description: "Döner, Burger, Wraps & mehr" },
-    { icon: "BadgeEuro", title: "Faire Preise", description: "Qualität zum fairen Preis" }
+    { icon: "Car", title: "100 Gratis Parkplätze", description: "Kostenlos parken im B8 Center" }
   ],
   
   // Menü-Kategorien und Items
