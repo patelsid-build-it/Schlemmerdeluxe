@@ -53,9 +53,9 @@ export const restaurant = {
   instagram: "https://www.instagram.com/schlemmer_deluxe",
   
   usps: [
-    { icon: "ChefHat", title: "Frisch zubereitet", description: "Alle Gerichte werden frisch für Sie zubereitet" },
+    { icon: "ChefHat", title: "Premium Steak Döner", description: "Frisch zubereitet mit hochwertigem Steak-Fleisch" },
     { icon: "Clock", title: "Schnelle Abholung", description: "Kurze Wartezeiten bei Abholung" },
-    { icon: "Utensils", title: "Große Auswahl", description: "Döner, Burger, Wraps & mehr" },
+    { icon: "Utensils", title: "Große Auswahl", description: "Veggie & Vegan Burger, Wraps & mehr" },
     { icon: "Car", title: "100 Gratis Parkplätze", description: "Kostenlos parken im B8 Center" }
   ],
   
