@@ -1,6 +1,6 @@
 'use client'
 
-import { Phone, ShoppingBag } from 'lucide-react'
+import { Phone, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { restaurant } from '@/data/restaurant'
 
@@ -22,8 +22,8 @@ export default function StickyMobileCTA() {
           className="flex-1 h-12 bg-brand hover:bg-brand/90"
           asChild
         >
-          <a href={restaurant.orderingLinks.primary}>
-            <ShoppingBag className="h-5 w-5 mr-2" />
+          <a href={restaurant.orderingLinks.lieferando} target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="h-5 w-5 mr-2" />
             Bestellen
           </a>
         </Button>
