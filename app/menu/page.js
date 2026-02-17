@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
-import { Search, Utensils, Star, ArrowLeft, ShoppingBag } from 'lucide-react'
+import { Search, Utensils, Star, ArrowLeft, Phone, ExternalLink } from 'lucide-react'
 import { restaurant, getAllMenuItems } from '@/data/restaurant'
 
 export default function MenuPage() {
@@ -41,14 +41,14 @@ export default function MenuPage() {
       
       <main className="flex-1 pb-20 md:pb-0">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-brand/10 to-brand-2/10 py-12">
+        <section className="gradient-hero text-white py-12">
           <div className="container">
-            <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-brand mb-4">
+            <Link href="/" className="inline-flex items-center text-sm text-white/80 hover:text-white mb-4">
               <ArrowLeft className="h-4 w-4 mr-1" />
               Zurück zur Startseite
             </Link>
             <h1 className="text-4xl font-bold mb-2">Unser Menü</h1>
-            <p className="text-muted-foreground">Entdecken Sie unsere vielfältige Auswahl</p>
+            <p className="text-white/80">Entdecken Sie unsere vielfältige Auswahl</p>
           </div>
         </section>
 
@@ -113,10 +113,10 @@ export default function MenuPage() {
                   {filteredItems.map((item) => (
                     <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                       <CardContent className="p-0">
-                        <div className="h-28 bg-gradient-to-br from-brand/15 to-brand-2/15 flex items-center justify-center relative">
-                          <Utensils className="h-10 w-10 text-brand/40" />
+                        <div className="h-28 gradient-hero flex items-center justify-center relative">
+                          <Utensils className="h-10 w-10 text-white/40" />
                           {item.bestseller && (
-                            <Badge className="absolute top-2 right-2 bg-brand text-white">
+                            <Badge className="absolute top-2 right-2 bg-white text-brand">
                               <Star className="h-3 w-3 mr-1" /> Bestseller
                             </Badge>
                           )}
@@ -133,13 +133,6 @@ export default function MenuPage() {
                           </p>
                           <div className="flex items-center justify-between">
                             <span className="text-lg font-bold text-brand">{item.price}</span>
-                            {/* TODO: Echten Bestelllink einfügen */}
-                            <Button size="sm" className="bg-brand hover:bg-brand/90" asChild>
-                              <a href={restaurant.orderingLinks.primary}>
-                                <ShoppingBag className="h-4 w-4 mr-1" />
-                                Bestellen
-                              </a>
-                            </Button>
                           </div>
                         </div>
                       </CardContent>
@@ -152,23 +145,27 @@ export default function MenuPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 bg-brand text-white">
+        <section className="py-12 gradient-hero text-white">
           <div className="container text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Hunger bekommen?</h2>
-            <p className="mb-6 text-white/90">Bestellen Sie jetzt und genießen Sie unsere Spezialitäten!</p>
+            <p className="mb-6 text-white/90">Bestellen Sie jetzt über Lieferando oder Wolt!</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" className="bg-white text-brand hover:bg-white/90" asChild>
-                <a href={restaurant.orderingLinks.primary}>
-                  <ShoppingBag className="mr-2 h-5 w-5" />
-                  Jetzt bestellen
+              <Button size="lg" className="bg-[#FF8000] hover:bg-[#FF8000]/90" asChild>
+                <a href={restaurant.orderingLinks.lieferando} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  Bei Lieferando bestellen
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
-                <a href={`tel:${restaurant.phone}`}>
-                  Anrufen: {restaurant.phoneFormatted}
+              <Button size="lg" className="bg-[#009DE0] hover:bg-[#009DE0]/90" asChild>
+                <a href={restaurant.orderingLinks.wolt} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  Bei Wolt bestellen
                 </a>
               </Button>
             </div>
+            <p className="mt-6 text-white/80">
+              Oder rufen Sie uns an: <a href={`tel:${restaurant.phone}`} className="font-bold hover:underline">{restaurant.phoneFormatted}</a>
+            </p>
           </div>
         </section>
       </main>
