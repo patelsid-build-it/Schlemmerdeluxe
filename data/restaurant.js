@@ -10,6 +10,7 @@ export const restaurant = {
     street: "Erkrather Str. 169",
     zip: "40233",
     city: "Düsseldorf",
+    location: "B8 Center Flingern",
     country: "Deutschland"
   },
   
@@ -17,7 +18,7 @@ export const restaurant = {
   phoneFormatted: "0211 566 531 47",
   
   // Generierter Google Maps Link basierend auf Adresse
-  googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Erkrather+Str.+169,+40233+Düsseldorf",
+  googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Erkrather+Str.+169,+40233+Düsseldorf+B8+Center+Flingern",
   
   // TODO: Echte Öffnungszeiten einfügen
   openingHours: [
@@ -30,11 +31,23 @@ export const restaurant = {
     { day: "Sonntag", hours: "12:00 - 22:00" }
   ],
   
-  // TODO: Echte Bestelllinks einfügen (Lieferando, Wolt, etc.)
+  // Bestelllinks
   orderingLinks: {
-    primary: "#bestellen", // TODO: Echten Link einfügen
-    lieferando: "#lieferando", // TODO: Lieferando Link
-    wolt: "#wolt", // TODO: Wolt Link
+    lieferando: "https://www.lieferando.de/speisekarte/schlemmer-deluxe",
+    wolt: "https://wolt.com/de/deu/dusseldorf/restaurant/schlemmer-deluxe",
+  },
+  
+  // Tischreservierung
+  tables: {
+    indoor: 20,
+    outdoor: 7,
+    total: 27
+  },
+  
+  // Parkplätze
+  parking: {
+    spaces: 100,
+    free: true
   },
   
   instagram: "https://www.instagram.com/schlemmer_deluxe",
