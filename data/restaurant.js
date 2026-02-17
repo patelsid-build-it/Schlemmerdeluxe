@@ -34,7 +34,7 @@ export const restaurant = {
   // Bestelllinks
   orderingLinks: {
     lieferando: "https://www.lieferando.de/speisekarte/schlemmer-deluxe",
-    wolt: "https://wolt.com/de/deu/dusseldorf/restaurant/schlemmer-deluxe",
+    wolt: "https://wolt.com/de/deu/dusseldorf/restaurant/schlemmer-ecke",
   },
   
   // Tischreservierung
