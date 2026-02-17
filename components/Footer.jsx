@@ -12,17 +12,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Info */}
           <div className="md:col-span-1">
-            <div className="mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <Image 
                 src="/logo.jpg" 
                 alt="Schlemmer Deluxe Logo" 
-                width={150} 
+                width={40} 
                 height={40}
-                className="h-10 w-auto object-contain bg-[#CC0000] rounded p-1"
+                className="h-10 w-10 object-contain rounded"
               />
+              <div>
+                <span className="text-lg font-bold text-[#CC0000]">Schlemmer</span>
+                <span className="text-lg font-bold text-white ml-1">Deluxe</span>
+              </div>
             </div>
             <p className="text-white/70 text-sm">
-              {restaurant.description}
+              Premium Steak Döner, Veggie & Vegan Burger – frisch zubereitet in Düsseldorf.
             </p>
             <p className="text-white/70 text-sm mt-2">
               {restaurant.address.location}
