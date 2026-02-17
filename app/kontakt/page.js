@@ -8,7 +8,7 @@ import StickyMobileCTA from '@/components/StickyMobileCTA'
 import ContactForm from '@/components/ContactForm'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { MapPin, Phone, Clock, Navigation, ArrowLeft, Map } from 'lucide-react'
+import { MapPin, Phone, Clock, Navigation, ArrowLeft, Map, Car } from 'lucide-react'
 import { restaurant } from '@/data/restaurant'
 
 export default function KontaktPage() {
@@ -20,14 +20,14 @@ export default function KontaktPage() {
       
       <main className="flex-1 pb-20 md:pb-0">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-brand/10 to-brand-2/10 py-12">
+        <section className="gradient-hero text-white py-12">
           <div className="container">
-            <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-brand mb-4">
+            <Link href="/" className="inline-flex items-center text-sm text-white/80 hover:text-white mb-4">
               <ArrowLeft className="h-4 w-4 mr-1" />
               Zurück zur Startseite
             </Link>
             <h1 className="text-4xl font-bold mb-2">Kontakt</h1>
-            <p className="text-muted-foreground">Wir freuen uns auf Ihre Nachricht!</p>
+            <p className="text-white/80">Wir freuen uns auf Ihre Nachricht!</p>
           </div>
         </section>
 
@@ -65,11 +65,16 @@ export default function KontaktPage() {
                       </div>
                       <div>
                         <h2 className="font-semibold text-lg mb-2">Besuchen Sie uns</h2>
-                        <address className="not-italic text-muted-foreground mb-4">
+                        <address className="not-italic text-muted-foreground mb-2">
                           <p className="font-medium text-foreground">{restaurant.name}</p>
                           <p>{restaurant.address.street}</p>
                           <p>{restaurant.address.zip} {restaurant.address.city}</p>
+                          <p className="text-brand font-medium">{restaurant.address.location}</p>
                         </address>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                          <Car className="h-4 w-4 text-brand" />
+                          <span>100 kostenlose Parkplätze</span>
+                        </div>
                         <Button className="bg-brand hover:bg-brand/90" asChild>
                           <a href={restaurant.googleMapsLink} target="_blank" rel="noopener noreferrer">
                             <Navigation className="mr-2 h-4 w-4" />
@@ -85,12 +90,11 @@ export default function KontaktPage() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 rounded-full bg-brand-2/20 flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center">
                         <Clock className="h-7 w-7 text-brand" />
                       </div>
                       <h2 className="font-semibold text-lg">Öffnungszeiten</h2>
                     </div>
-                    {/* TODO: Echte Öffnungszeiten einfügen */}
                     <ul className="space-y-2">
                       {restaurant.openingHours.map((item, index) => (
                         <li key={index} className="flex justify-between py-2 border-b border-border last:border-0">
