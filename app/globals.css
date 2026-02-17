@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    /* Schlemmer Deluxe Markenfarben */
-    --brand: 15 85% 50%;
-    --brand-2: 45 90% 55%;
+    /* Schlemmer Deluxe Markenfarben - Dunkelrot aus Logo #CC0000 */
+    --brand: 0 100% 40%;
+    --brand-2: 0 100% 35%;
     --accent: 142 70% 40%;
-    --bg: 30 40% 98%;
-    --text: 20 10% 15%;
+    --bg: 0 0% 98%;
+    --text: 0 0% 10%;
     
     /* Shadcn Farben angepasst */
-    --background: 30 40% 98%;
-    --foreground: 20 10% 15%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 20 10% 15%;
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 15%;
-    --primary: 15 85% 50%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 100% 40%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 45 90% 55%;
-    --secondary-foreground: 20 10% 15%;
-    --muted: 30 20% 94%;
-    --muted-foreground: 20 10% 45%;
-    --accent: 142 70% 40%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 100% 35%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 15 85% 50%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 100% 40%;
     --radius: 0.625rem;
   }
 }
@@ -65,9 +65,9 @@
     border-color: hsl(var(--brand));
   }
   .gradient-hero {
-    background: linear-gradient(135deg, hsl(var(--brand)) 0%, hsl(15 75% 40%) 100%);
+    background: linear-gradient(135deg, hsl(0 100% 40%) 0%, hsl(0 100% 30%) 100%);
   }
-  .gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--brand-2)) 0%, hsl(35 85% 50%) 100%);
+  .gradient-dark {
+    background: linear-gradient(135deg, hsl(0 100% 35%) 0%, hsl(0 100% 25%) 100%);
   }
 }
