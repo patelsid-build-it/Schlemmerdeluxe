@@ -39,10 +39,10 @@ export default function HomePage() {
           <div className="container py-16 md:py-24">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                {restaurant.name} – <span className="text-white/90">Premium Steak Döner</span>
+                {restaurant.name} – <span className="text-white/90">frisch, lecker, schnell.</span>
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-8">
-                Frisch zubereiteter Premium Steak Döner, Veggie & Vegan Burger – Abholung oder Lieferung in Düsseldorf.
+                Döner, Burger & mehr – Abholung oder Lieferung in Düsseldorf.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
