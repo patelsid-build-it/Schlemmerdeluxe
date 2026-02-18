@@ -59,69 +59,68 @@ export const restaurant = {
     { icon: "Car", title: "100 Gratis Parkplätze", description: "Kostenlos parken im B8 Center" }
   ],
   
-  // Menü-Kategorien und Items
-  // TODO: Echte Preise und Beschreibungen einfügen
+  // Menü-Kategorien und Items mit AI-generierten Bildern
   menuCategories: [
     {
       id: "doener",
       name: "Döner",
       items: [
-        { id: "d1", name: "Döner Kebab", description: "Klassischer Döner mit frischem Salat, Tomaten, Zwiebeln und Sauce nach Wahl", price: "6,50 €", bestseller: true },
-        { id: "d2", name: "Döner Box", description: "Döner-Fleisch mit Pommes in der Box, dazu Salat und Sauce", price: "8,50 €", bestseller: false },
-        { id: "d3", name: "Döner Teller", description: "Döner-Fleisch mit Reis oder Pommes, Salat und Sauce", price: "10,90 €", bestseller: false },
-        { id: "d4", name: "Döner Dürum", description: "Döner gerollt im dünnen Fladenbrot mit allem", price: "7,50 €", bestseller: true },
-        { id: "d5", name: "Döner XL", description: "Extra großer Döner mit doppelt Fleisch", price: "9,50 €", bestseller: false },
-        { id: "d6", name: "Kinder Döner", description: "Kleiner Döner für die Kleinen", price: "4,50 €", bestseller: false }
+        { id: "d1", name: "Döner Kebab", description: "Klassischer Döner mit frischem Salat, Tomaten, Zwiebeln und Sauce nach Wahl", price: "6,50 €", bestseller: true, image: "/food/d1.png" },
+        { id: "d2", name: "Döner Box", description: "Döner-Fleisch mit Pommes in der Box, dazu Salat und Sauce", price: "8,50 €", bestseller: false, image: "/food/d2.png" },
+        { id: "d3", name: "Döner Teller", description: "Döner-Fleisch mit Reis oder Pommes, Salat und Sauce", price: "10,90 €", bestseller: false, image: "/food/d3.png" },
+        { id: "d4", name: "Döner Dürum", description: "Döner gerollt im dünnen Fladenbrot mit allem", price: "7,50 €", bestseller: true, image: "/food/d4.png" },
+        { id: "d5", name: "Döner XL", description: "Extra großer Döner mit doppelt Fleisch", price: "9,50 €", bestseller: false, image: "/food/d5.png" },
+        { id: "d6", name: "Kinder Döner", description: "Kleiner Döner für die Kleinen", price: "4,50 €", bestseller: false, image: "/food/d6.png" }
       ]
     },
     {
       id: "burger",
       name: "Burger",
       items: [
-        { id: "b1", name: "Classic Burger", description: "Saftiges Rindfleisch-Patty mit Salat, Tomate, Gurke und Hausdressing", price: "7,90 €", bestseller: true },
-        { id: "b2", name: "Cheese Burger", description: "Mit extra Käse und karamellisierten Zwiebeln", price: "8,90 €", bestseller: false },
-        { id: "b3", name: "Chicken Burger", description: "Knuspriges Hähnchen-Filet mit Salat und Mayo", price: "8,50 €", bestseller: false },
-        { id: "b4", name: "Deluxe Burger", description: "Doppelt Fleisch, Bacon, Käse und alle Toppings", price: "11,90 €", bestseller: false }
+        { id: "b1", name: "Classic Burger", description: "Saftiges Rindfleisch-Patty mit Salat, Tomate, Gurke und Hausdressing", price: "7,90 €", bestseller: true, image: "/food/b1.png" },
+        { id: "b2", name: "Cheese Burger", description: "Mit extra Käse und karamellisierten Zwiebeln", price: "8,90 €", bestseller: false, image: "/food/b2.png" },
+        { id: "b3", name: "Chicken Burger", description: "Knuspriges Hähnchen-Filet mit Salat und Mayo", price: "8,50 €", bestseller: false, image: "/food/b3.png" },
+        { id: "b4", name: "Deluxe Burger", description: "Doppelt Fleisch, Bacon, Käse und alle Toppings", price: "11,90 €", bestseller: false, image: "/food/b4.png" }
       ]
     },
     {
       id: "wraps",
       name: "Wraps",
       items: [
-        { id: "w1", name: "Chicken Wrap", description: "Gegrilltes Hähnchen mit frischem Salat und Joghurt-Sauce", price: "7,50 €", bestseller: false },
-        { id: "w2", name: "Döner Wrap", description: "Döner-Fleisch gerollt im Wrap mit allem", price: "7,50 €", bestseller: false },
-        { id: "w3", name: "Falafel Wrap", description: "Knusprige Falafel mit Hummus und Salat", price: "6,90 €", bestseller: false },
-        { id: "w4", name: "Halloumi Wrap", description: "Gegrillter Halloumi mit Gemüse und Minz-Sauce", price: "7,90 €", bestseller: false }
+        { id: "w1", name: "Chicken Wrap", description: "Gegrilltes Hähnchen mit frischem Salat und Joghurt-Sauce", price: "7,50 €", bestseller: false, image: "/food/w1.png" },
+        { id: "w2", name: "Döner Wrap", description: "Döner-Fleisch gerollt im Wrap mit allem", price: "7,50 €", bestseller: false, image: "/food/w2.png" },
+        { id: "w3", name: "Falafel Wrap", description: "Knusprige Falafel mit Hummus und Salat", price: "6,90 €", bestseller: false, image: "/food/w3.png" },
+        { id: "w4", name: "Halloumi Wrap", description: "Gegrillter Halloumi mit Gemüse und Minz-Sauce", price: "7,90 €", bestseller: false, image: "/food/w4.png" }
       ]
     },
     {
       id: "bowls",
       name: "Bowls",
       items: [
-        { id: "bo1", name: "Döner Bowl", description: "Döner-Fleisch auf Reis mit Salat, Hummus und Sauce", price: "10,90 €", bestseller: false },
-        { id: "bo2", name: "Chicken Bowl", description: "Gegrilltes Hähnchen mit Quinoa, Gemüse und Tahini", price: "11,50 €", bestseller: false },
-        { id: "bo3", name: "Falafel Bowl", description: "Falafel auf Salat mit Hummus, Gemüse und Dressing", price: "9,90 €", bestseller: false },
-        { id: "bo4", name: "Mixed Bowl", description: "Döner & Hähnchen mit Reis und allen Toppings", price: "12,90 €", bestseller: false }
+        { id: "bo1", name: "Döner Bowl", description: "Döner-Fleisch auf Reis mit Salat, Hummus und Sauce", price: "10,90 €", bestseller: false, image: "/food/bo1.png" },
+        { id: "bo2", name: "Chicken Bowl", description: "Gegrilltes Hähnchen mit Quinoa, Gemüse und Tahini", price: "11,50 €", bestseller: false, image: "/food/bo2.png" },
+        { id: "bo3", name: "Falafel Bowl", description: "Falafel auf Salat mit Hummus, Gemüse und Dressing", price: "9,90 €", bestseller: false, image: "/food/bo3.png" },
+        { id: "bo4", name: "Mixed Bowl", description: "Döner & Hähnchen mit Reis und allen Toppings", price: "12,90 €", bestseller: false, image: "/food/bo4.png" }
       ]
     },
     {
       id: "vegetarisch",
       name: "Vegetarisch",
       items: [
-        { id: "v1", name: "Falafel Tasche", description: "Knusprige Falafel im Fladenbrot mit Salat und Hummus", price: "6,50 €", bestseller: false },
-        { id: "v2", name: "Halloumi Tasche", description: "Gegrillter Halloumi mit frischem Salat", price: "7,50 €", bestseller: false },
-        { id: "v3", name: "Veggie Burger", description: "Hausgemachtes Gemüse-Patty mit allen Toppings", price: "8,50 €", bestseller: false },
-        { id: "v4", name: "Gemüse Teller", description: "Gegrilltes Gemüse mit Reis, Salat und Dips", price: "9,90 €", bestseller: false }
+        { id: "v1", name: "Falafel Tasche", description: "Knusprige Falafel im Fladenbrot mit Salat und Hummus", price: "6,50 €", bestseller: false, image: "/food/v1.png" },
+        { id: "v2", name: "Halloumi Tasche", description: "Gegrillter Halloumi mit frischem Salat", price: "7,50 €", bestseller: false, image: "/food/v2.png" },
+        { id: "v3", name: "Veggie Burger", description: "Hausgemachtes Gemüse-Patty mit allen Toppings", price: "8,50 €", bestseller: false, image: "/food/v3.png" },
+        { id: "v4", name: "Gemüse Teller", description: "Gegrilltes Gemüse mit Reis, Salat und Dips", price: "9,90 €", bestseller: false, image: "/food/v4.png" }
       ]
     },
     {
       id: "getraenke",
       name: "Getränke",
       items: [
-        { id: "g1", name: "Ayran", description: "Erfrischendes Joghurt-Getränk", price: "2,50 €", bestseller: false },
-        { id: "g2", name: "Cola / Fanta / Sprite", description: "0,33l Dose", price: "2,00 €", bestseller: false },
-        { id: "g3", name: "Wasser", description: "Still oder mit Kohlensäure, 0,5l", price: "2,00 €", bestseller: false },
-        { id: "g4", name: "Türkischer Tee", description: "Traditioneller schwarzer Tee", price: "2,50 €", bestseller: false }
+        { id: "g1", name: "Ayran", description: "Erfrischendes Joghurt-Getränk", price: "2,50 €", bestseller: false, image: "/food/g1.png" },
+        { id: "g2", name: "Cola / Fanta / Sprite", description: "0,33l Dose", price: "2,00 €", bestseller: false, image: "/food/g2.png" },
+        { id: "g3", name: "Wasser", description: "Still oder mit Kohlensäure, 0,5l", price: "2,00 €", bestseller: false, image: "/food/g3.png" },
+        { id: "g4", name: "Türkischer Tee", description: "Traditioneller schwarzer Tee", price: "2,50 €", bestseller: false, image: "/food/g4.png" }
       ]
     }
   ]
