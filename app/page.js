@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
@@ -164,8 +165,20 @@ export default function HomePage() {
               {bestsellers.slice(0, 6).map((item) => (
                 <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow dark:bg-card">
                   <CardContent className="p-0">
-                    <div className="h-32 gradient-hero flex items-center justify-center">
-                      <Utensils className="h-12 w-12 text-white/50" />
+                    <div className="h-48 relative overflow-hidden">
+                      {item.image ? (
+                        <Image 
+                          src={item.image} 
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="w-full h-full gradient-hero flex items-center justify-center">
+                          <Utensils className="h-12 w-12 text-white/50" />
+                        </div>
+                      )}
                     </div>
                     <div className="p-4">
                       <div className="flex items-start justify-between gap-2 mb-2">
@@ -217,8 +230,20 @@ export default function HomePage() {
                     {category.items.slice(0, 4).map((item) => (
                       <Card key={item.id} className="hover:shadow-md transition-shadow bg-background dark:bg-background">
                         <CardContent className="p-4 flex gap-4">
-                          <div className="w-20 h-20 shrink-0 rounded-lg gradient-hero flex items-center justify-center">
-                            <Utensils className="h-8 w-8 text-white/40" />
+                          <div className="w-24 h-24 shrink-0 rounded-lg overflow-hidden relative">
+                            {item.image ? (
+                              <Image 
+                                src={item.image} 
+                                alt={item.name}
+                                fill
+                                className="object-cover"
+                                sizes="96px"
+                              />
+                            ) : (
+                              <div className="w-full h-full gradient-hero flex items-center justify-center">
+                                <Utensils className="h-8 w-8 text-white/40" />
+                              </div>
+                            )}
                           </div>
                           <div className="flex-1">
                             <div className="flex items-start justify-between gap-2">
