@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
@@ -36,7 +37,7 @@ export default function MenuPage() {
   }, [allItems, activeCategory, searchQuery])
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
       <main className="flex-1 pb-20 md:pb-0">
@@ -53,7 +54,7 @@ export default function MenuPage() {
         </section>
 
         {/* Filters */}
-        <section className="sticky top-16 z-40 bg-background border-b border-border py-4">
+        <section className="sticky top-16 z-40 bg-background dark:bg-background border-b border-border py-4">
           <div className="container">
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Search */}
@@ -111,10 +112,22 @@ export default function MenuPage() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {filteredItems.map((item) => (
-                    <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                    <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow dark:bg-card">
                       <CardContent className="p-0">
-                        <div className="h-28 gradient-hero flex items-center justify-center relative">
-                          <Utensils className="h-10 w-10 text-white/40" />
+                        <div className="h-48 relative overflow-hidden">
+                          {item.image ? (
+                            <Image 
+                              src={item.image} 
+                              alt={item.name}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            />
+                          ) : (
+                            <div className="w-full h-full gradient-hero flex items-center justify-center">
+                              <Utensils className="h-10 w-10 text-white/40" />
+                            </div>
+                          )}
                           {item.bestseller && (
                             <Badge className="absolute top-2 right-2 bg-white text-brand">
                               <Star className="h-3 w-3 mr-1" /> Bestseller
