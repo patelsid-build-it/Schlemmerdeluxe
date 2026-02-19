@@ -36,25 +36,45 @@ export default function ReservationForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulierte Formularübermittlung (Prototyp)
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch('/api/reservation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-    toast.success('Reservierung angefragt!', {
-      description: `Wir haben Ihre Anfrage für ${formData.guests} Personen am ${formData.date} um ${formData.time} Uhr erhalten. Wir melden uns schnellstmöglich bei Ihnen.`,
-      duration: 5000,
-    })
+      const data = await response.json()
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      date: '',
-      time: '',
-      guests: '2',
-      location: 'indoor',
-      notes: ''
-    })
-    setIsSubmitting(false)
+      if (!response.ok) {
+        throw new Error(data.error || 'Ein Fehler ist aufgetreten')
+      }
+
+      toast.success('Reservierung angefragt!', {
+        description: `Wir haben Ihre Anfrage für ${formData.guests} Personen am ${formData.date} um ${formData.time} Uhr erhalten. Sie erhalten eine Bestätigung per E-Mail.`,
+        duration: 5000,
+      })
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        time: '',
+        guests: '2',
+        location: 'indoor',
+        notes: ''
+      })
+    } catch (error) {
+      toast.error('Fehler', {
+        description: error.message || 'Bitte versuchen Sie es später erneut oder rufen Sie uns an.',
+        duration: 5000,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // Generate time slots
@@ -76,11 +96,10 @@ export default function ReservationForm() {
         <button
           type="button"
           onClick={() => handleSelectChange('location', 'indoor')}
-          className={`p-4 rounded-lg border-2 transition-all ${
-            formData.location === 'indoor' 
-              ? 'border-brand bg-brand/5' 
+          className={`p-4 rounded-lg border-2 transition-all ${formData.location === 'indoor'
+              ? 'border-brand bg-brand/5'
               : 'border-border hover:border-brand/50'
-          }`}
+            }`}
         >
           <Armchair className={`h-8 w-8 mx-auto mb-2 ${formData.location === 'indoor' ? 'text-brand' : 'text-muted-foreground'}`} />
           <p className="font-semibold">Drinnen</p>
@@ -89,11 +108,10 @@ export default function ReservationForm() {
         <button
           type="button"
           onClick={() => handleSelectChange('location', 'outdoor')}
-          className={`p-4 rounded-lg border-2 transition-all ${
-            formData.location === 'outdoor' 
-              ? 'border-brand bg-brand/5' 
+          className={`p-4 rounded-lg border-2 transition-all ${formData.location === 'outdoor'
+              ? 'border-brand bg-brand/5'
               : 'border-border hover:border-brand/50'
-          }`}
+            }`}
         >
           <TreePine className={`h-8 w-8 mx-auto mb-2 ${formData.location === 'outdoor' ? 'text-brand' : 'text-muted-foreground'}`} />
           <p className="font-semibold">Draußen</p>
@@ -206,8 +224,8 @@ export default function ReservationForm() {
         />
       </div>
 
-      <Button 
-        type="submit" 
+      <Button
+        type="submit"
         className="w-full bg-brand hover:bg-brand/90 h-12 text-lg"
         disabled={isSubmitting}
       >
