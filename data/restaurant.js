@@ -63,7 +63,7 @@ export const restaurant = {
     { icon: "ChefHat", title: "Premium Steak Döner", description: "Frisch zubereitet mit hochwertigem Steak-Fleisch" },
     { icon: "Clock", title: "Schnelle Abholung", description: "Kurze Wartezeiten bei Abholung" },
     { icon: "Utensils", title: "Große Auswahl", description: "Veggie & Vegan Burger, Wraps & mehr" },
-    { icon: "Car", title: "100 Gratis Parkplätze", description: "Kostenlos parken im B8 Center" }
+    { icon: "Car", title: "100 Gratis Parkplätze", description: "Kostenlos parken auf B8 center" }
   ],
 
   // Menü-Kategorien und Items mit AI-generierten Bildern

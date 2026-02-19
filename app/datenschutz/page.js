@@ -29,19 +29,7 @@ export default function DatenschutzPage() {
 
         <section className="py-12">
           <div className="container max-w-3xl">
-            {/* TODO Hinweis */}
-            <Card className="mb-8 border-brand/50 bg-brand/5">
-              <CardContent className="p-4 flex gap-3">
-                <AlertCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-brand">Platzhalter-Inhalte</p>
-                  <p className="text-sm text-muted-foreground">
-                    Die markierten Felder [TODO] müssen mit den echten Daten und ggf. mit Unterstützung
-                    eines Rechtsanwalts für Datenschutzrecht ausgefüllt werden.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Banner removed */}
 
             <div className="prose prose-neutral max-w-none space-y-8">
               <section>

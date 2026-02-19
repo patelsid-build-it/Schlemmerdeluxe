@@ -29,18 +29,7 @@ export default function ImpressumPage() {
 
         <section className="py-12">
           <div className="container max-w-3xl">
-            {/* TODO Hinweis */}
-            <Card className="mb-8 border-brand/50 bg-brand/5">
-              <CardContent className="p-4 flex gap-3">
-                <AlertCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-brand">Platzhalter-Inhalte</p>
-                  <p className="text-sm text-muted-foreground">
-                    Die markierten Felder [TODO] müssen mit den echten Unternehmensdaten ausgefüllt werden.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Banner removed */}
 
             <div className="prose prose-neutral max-w-none">
               <h2 className="text-2xl font-bold mb-4">Angaben gemäß § 5 TMG</h2>
@@ -90,10 +79,10 @@ export default function ImpressumPage() {
                 </CardContent>
               </Card>
 
-              <h3 className="text-xl font-semibold mb-3">Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+              <h3 className="text-xl font-semibold mb-3">Gegenstand des Unternehmens</h3>
               <Card className="mb-6">
                 <CardContent className="p-6">
-                  <p className="text-brand">[TODO: Falls zutreffend, Berufsbezeichnung und zuständige Kammer einfügen]</p>
+                  <p>Die Durchführung von Events, das Catering und die Führung eines Spezialitätenimbisses.</p>
                 </CardContent>
               </Card>
 
