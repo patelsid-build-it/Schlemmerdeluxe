@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Schlemmer Deluxe Markenfarben - Dunkelrot aus Logo #CC0000 */
+    --brand: 0 100% 40%;
+    --brand-2: 0 100% 35%;
+    --accent: 142 70% 40%;
+    --bg: 0 0% 98%;
+    --text: 0 0% 10%;
+    
+    /* Shadcn Farben angepasst */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 100% 35%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 100% 40%;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-brand {
+    color: hsl(var(--brand));
+  }
+  .bg-brand {
+    background-color: hsl(var(--brand));
+  }
+  .text-brand-2 {
+    color: hsl(var(--brand-2));
+  }
+  .bg-brand-2 {
+    background-color: hsl(var(--brand-2));
+  }
+  .border-brand {
+    border-color: hsl(var(--brand));
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(0 100% 40%) 0%, hsl(0 100% 30%) 100%);
+  }
+  .gradient-dark {
+    background: linear-gradient(135deg, hsl(0 100% 35%) 0%, hsl(0 100% 25%) 100%);
+  }
+}
