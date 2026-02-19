@@ -340,41 +340,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Instagram Section */}
-        <section className="py-12 bg-background">
-          <div className="container">
-            <div className="text-center mb-8">
-              <Instagram className="h-10 w-10 mx-auto mb-3 text-brand" />
-              <h2 className="text-3xl font-bold mb-2">Folgen Sie uns</h2>
-              <p className="text-muted-foreground">Entdecken Sie unsere neuesten Kreationen auf Instagram</p>
-            </div>
 
-            {/* Instagram Reels Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-              {restaurant.instagramReels.map((reelUrl, index) => (
-                <a
-                  key={index}
-                  href={reelUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="aspect-square gradient-hero rounded-lg flex items-center justify-center hover:scale-105 transition-transform cursor-pointer relative overflow-hidden group"
-                >
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                  <Instagram className="h-8 w-8 text-white relative z-10" />
-                </a>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <Button className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90" asChild>
-                <a href={restaurant.instagram} target="_blank" rel="noopener noreferrer">
-                  <Instagram className="mr-2 h-5 w-5" />
-                  Mehr auf Instagram
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
 
         {/* Kontakt Section */}
         <section id="kontakt" className="py-12 bg-muted dark:bg-card scroll-mt-20">
