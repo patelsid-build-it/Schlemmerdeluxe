@@ -1,5 +1,6 @@
 import './globals.css'
 import { Toaster } from 'sonner'
+import CookieBanner from '@/components/CookieBanner'
 
 export const metadata = {
   title: 'Schlemmer Deluxe | Döner, Burger & mehr in Düsseldorf',
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased">
         {children}
+        <CookieBanner />
         <Toaster position="top-center" richColors />
       </body>
     </html>

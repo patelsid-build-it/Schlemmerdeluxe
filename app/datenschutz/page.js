@@ -116,12 +116,17 @@ export default function DatenschutzPage() {
                 <h2 className="text-2xl font-bold mb-4">4. Cookies</h2>
                 <Card>
                   <CardContent className="p-6">
-                    <p className="text-brand mb-2">[TODO: Analyse und Anpassung erforderlich]</p>
                     <p className="text-muted-foreground">
-                      Diese Website verwendet <span className="text-brand">[TODO: technisch notwendige / Analyse / Marketing]</span> Cookies.
-                      Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und
-                      die Ihr Browser speichert.
+                      Unsere Website verwendet ausschließlich technisch notwendige Cookies. Dies sind kleine Textdateien,
+                      die auf Ihrem Endgerät abgelegt werden und die Ihr Browser speichert. Diese Cookies dienen dazu,
+                      unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen.
                     </p>
+                    <p className="text-muted-foreground mt-2">
+                      Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies". Sie werden nach
+                      Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert,
+                      bis Sie diese löschen (z.B. Ihre Zustimmung zum Cookie-Banner).
+                    </p>
+                    <p className="mt-4 font-semibold">Wir verwenden keine Tracking- oder Marketing-Cookies von Drittanbietern.</p>
                   </CardContent>
                 </Card>
               </section>
@@ -130,9 +135,10 @@ export default function DatenschutzPage() {
                 <h2 className="text-2xl font-bold mb-4">5. Analyse-Tools und Werbung</h2>
                 <Card>
                   <CardContent className="p-6">
-                    <p className="text-brand">[TODO: Falls Analytics verwendet wird, hier dokumentieren]</p>
-                    <p className="text-muted-foreground mt-2">
-                      z.B. Google Analytics, Matomo, etc. – mit Angaben zu Opt-Out-Möglichkeiten.
+                    <p className="text-muted-foreground">
+                      Wir nutzen derzeit <strong>keine</strong> externen Analyse-Tools (wie Google Analytics, Matomo etc.)
+                      und schalten keine Werbung auf dieser Website. Ihre Daten werden nicht zu Werbezwecken
+                      ausgewertet oder weitergegeben.
                     </p>
                   </CardContent>
                 </Card>
